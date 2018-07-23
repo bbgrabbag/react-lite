@@ -8,7 +8,7 @@
     "start": "export NODE_ENV=dev && webpack-dev-server --open --mode development"
   },
   "keywords": [],
-  "author": "",
+  "author": "bbgrabbag",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
