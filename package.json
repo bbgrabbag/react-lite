@@ -7,6 +7,10 @@
     "build": "export NODE_ENV=production && webpack --mode production",
     "start": "export NODE_ENV=dev && webpack-dev-server --open --mode development"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbgrabbag/react-lite"
+  },
   "keywords": [],
   "author": "bbgrabbag",
   "license": "ISC",
