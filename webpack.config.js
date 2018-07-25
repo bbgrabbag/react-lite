@@ -55,7 +55,19 @@ module.exports = {
                         }
                     }
                 ]
-            }]
+            },
+            {
+                test: /\.(png|jp(e*)g|svg)$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: "url-loader",
+                    options: {
+                        limit: 8000,
+                        name: "images/[hash]-[name].[ext]"
+                    }
+                }]
+            }
+        ]
     },
     plugins: [
         new HtmlWebPackPlugin({
