@@ -16,3 +16,11 @@ This repo contains the boilerplate code itself. Use the [Create React Lite App C
 
 ### Features
 Bundled with Webpack 4 • CSS modules • ES6 transpiled with Babel • Source mapping enabled
+
+---
+
+### Changelog
+
+- 7/31 
+    - Added ES6 Object Spread Support. 
+    - Added font support for .ttf, .woff, .woff2, eot files
