@@ -3,6 +3,7 @@ const path = require("path");
 
 //PLUGINS
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -13,7 +14,8 @@ const devMode = process.env.NODE_ENV !== "production";
 module.exports = {
     devServer: {
         host: process.env.HOST,
-        port: process.env.PORT || 3000
+        port: process.env.PORT || 3000,
+        historyApiFallback: true,
     },
     optimization: {
         minimizer: [
@@ -57,7 +59,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jp(e*)g|svg)$/,
+                test: /\.(png|jp(e*)g|svg|ico)$/,
                 exclude: /node_modules/,
                 use: [{
                     loader: "url-loader",
@@ -79,9 +81,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(["dist"]), 
         new HtmlWebPackPlugin({
             template: "./public/index.html",
-            filename: "./index.html"
+            filename: "./index.html",
+            favicon: "./public/favicon.ico"
         }),
         new MiniCssExtractPlugin({ filename: 'bundle.css' }),
     ]

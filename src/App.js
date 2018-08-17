@@ -2,7 +2,7 @@ import React from 'react';
 
 function App(props) {
     return (
-        <div >
+        <div>
             <h1 style={{
                 color: "blueviolet", 
                 textAlign: "center", 
